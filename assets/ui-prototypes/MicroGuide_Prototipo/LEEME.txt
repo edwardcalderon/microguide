@@ -1,0 +1,16 @@
+MicroGuide - Prototipo interactivo de ruta por nodos y QR
+
+Archivos:
+- index.html: prototipo completo (incluye estilos e interacciones).
+- favicon.svg: icono del sitio.
+
+Para abrirlo sin publicarlo, haga doble clic en index.html.
+
+Para compartirlo mediante Netlify Drop:
+1. Descomprima el ZIP y ubique la carpeta MicroGuide_Prototipo.
+2. Entre en https://app.netlify.com/drop (si el servicio solicita iniciar sesión, use su cuenta).
+3. Arrastre el ZIP o la carpeta MicroGuide_Prototipo al área de publicación.
+4. Abra el enlace publicado en un navegador de escritorio y en uno móvil.
+5. Comparta ese enlace con el docente; verifique que se pueda abrir sin su cuenta.
+
+El contenido es una simulación académica: los nodos, referencias del entorno y códigos QR son ejemplos. No se usa cámara, localización ni infraestructura física. Antes de las pruebas con usuarios, el equipo debe revisar las instrucciones, la pertinencia de las referencias y las tareas a evaluar.

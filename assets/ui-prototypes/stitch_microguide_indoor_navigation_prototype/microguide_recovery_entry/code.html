@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-container": "#00321f", "surface-container-low": "#eff4ff", "surface-tint": "#525d80", "secondary-fixed": "#d3e3ff", "on-tertiary-fixed": "#002113", "surface-dim": "#cbdbf5", "secondary-fixed-dim": "#b0c8ed", "on-secondary": "#ffffff", "background": "#f8f9ff", "primary-fixed": "#dae2ff", "on-surface-variant": "#45464e", "on-tertiary": "#ffffff", "on-primary-container": "#8691b7", "primary-container": "#1e2a4a", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "on-error": "#ffffff", "primary-fixed-dim": "#bac5ee", "surface-container": "#e5eeff", "surface-variant": "#d3e4fe", "on-secondary-container": "#485f7f", "on-secondary-fixed-variant": "#314867", "tertiary": "#001b0f", "outline-variant": "#c6c6cf", "surface-container-highest": "#d3e4fe", "outline": "#76777f", "on-error-container": "#93000a", "primary": "#081534", "on-surface": "#0b1c30", "inverse-primary": "#bac5ee", "inverse-surface": "#213145", "tertiary-fixed-dim": "#77daaa", "secondary": "#496080", "surface": "#f8f9ff", "surface-container-high": "#dce9ff", "secondary-container": "#c1d9fe", "inverse-on-surface": "#eaf1ff", "tertiary-fixed": "#93f6c4", "error-container": "#ffdad6", "on-background": "#0b1c30", "on-primary-fixed-variant": "#3a4667", "surface-bright": "#f8f9ff", "on-tertiary-container": "#3ea377", "on-tertiary-fixed-variant": "#005236", "on-primary-fixed": "#0d1a39", "on-secondary-fixed": "#001c39" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.25rem", "gutter": "1rem", "space-md": "0.75rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-sm": "0.5rem" }, fontFamily: { "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Inter"] }, fontSize: { "label-lg": ["15px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["17px", { "lineHeight": "26px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back or exit route" class="w-11 h-11 -ml-space-xs rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">MicroGuide</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm leading-none">EXP</span></div><div class="flex items-center gap-1 text-secondary min-w-0"><span class="material-symbols-outlined text-[14px] shrink-0">domain</span><span class="font-label-sm text-label-sm truncate max-w-[160px]">Engineering Hall M8A</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><button id="lang-toggle-btn" aria-label="Toggle English or Spanish" onclick="toggleLanguage()" class="h-8 px-2 rounded-full border border-outline-variant text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all text-[12px] font-label-md flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">translate</span><span id="lang-label" class="font-bold">ES</span></button><button id="theme-toggle-btn" aria-label="Toggle Dark or Light theme" onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all"><span id="theme-icon" class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Toggle audio accessibility" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container active:scale-95 transition-all"><span class="material-symbols-outlined text-[18px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface pb-safe flex-1 min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Subtle ambient supportive background aura -->
+<div class="fixed inset-0 pointer-events-none -z-10 flex items-center justify-center opacity-60">
+<div class="w-[320px] h-[320px] rounded-full bg-gradient-to-tr from-secondary-container/30 via-primary-fixed/20 to-tertiary-fixed/25 blur-3xl"></div>
+</div>
+<!-- Recovery State Header & Gentle Framing -->
+<div class="flex flex-col pt-space-md pb-space-lg"><div class="flex items-center gap-space-xs mb-space-xs"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">explore</span></span><span id="txt-wayfinding-label" class="font-label-sm text-label-sm text-secondary tracking-wider uppercase font-semibold">MicroGuide Wayfinding Assist</span></div><h1 id="txt-main-title" class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Let’s find your last confirmed point.</h1><p id="txt-main-desc" class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">Indoor spaces can be tricky. Don't worry—your last verified checkpoint is saved and ready.</p></div>
+<!-- Last Confirmed Location Card (High-Contrast Anchor) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_16px_rgba(8,21,52,0.06)] flex flex-col gap-space-md mb-space-lg relative overflow-hidden"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary-container to-secondary"></div><div class="flex items-center justify-between gap-space-xs"><span id="txt-checkpoint-badge" class="px-space-xs py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm tracking-wide font-bold uppercase">Last Verified Checkpoint</span><div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">history</span><span id="txt-time-ago" class="">2 minutes ago</span></div></div><div class="flex items-start gap-space-md"><div class="relative w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container shadow-sm"><img class="w-full h-full object-cover" data-alt="A brightly lit modern university engineering lobby with a prominent blue digital kiosk screen standing right beside an architectural oak and steel staircase, warm daylight filtering through high glass walls, soft architectural clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcWogPuq3n-9IihPu6G22tK0C6n6ia4VgOzh6WIzCNfA51DZ3EK1TMn2-gTB8fTOVWUUxEBQTLYbXPlNpglij-aMJpMVRVvYRA04FyLCM8lGFQsyxXaNB0HJdyr3P9oG2FVVQ3XADj90BWuak_Ff_51wk1HWugtRBRexraRbe11SW2_PZTl75d7arNjeC5NfQGHyQSOZbNtl95xi2q_d1PZJaEDgl8mLbSywtu2axYgpKz0Px9QJfWKw"><div class="absolute bottom-1 right-1 bg-primary/80 backdrop-blur-sm px-1 rounded text-on-primary font-label-sm text-label-sm flex items-center justify-center"><span class="material-symbols-outlined text-[12px]">visibility</span></div></div><div class="flex flex-col min-w-0 justify-center"><h2 id="txt-node-title" class="font-headline-sm text-headline-sm text-primary font-bold leading-snug">Node #1: Central Lobby Stairs</h2><div class="flex items-center gap-1 mt-1 text-secondary"><span class="material-symbols-outlined text-[16px] shrink-0 text-secondary">signpost</span><span id="txt-node-desc" class="font-body-sm text-body-sm text-secondary truncate">Blue digital information board</span></div><div class="flex items-center gap-1.5 mt-2"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><span id="txt-node-floor" class="font-label-sm text-label-sm text-on-surface-variant font-medium">Floor 1 • Main Atrium North</span></div></div></div></div>
+<!-- Recovery Actions Selection Section -->
+<div class="flex flex-col gap-space-sm mb-space-xl"><div class="flex items-center justify-between px-space-xs"><span id="txt-strategy-title" class="font-label-md text-label-md text-secondary font-semibold">Choose Recovery Strategy</span><span id="txt-strategy-step" class="font-label-sm text-label-sm text-on-surface-variant">Step 1 of 2</span></div><div class="recovery-option-card relative cursor-pointer w-full p-space-md rounded-xl bg-surface-container-low transition-all duration-200 active:scale-[0.99] shadow-sm select-none" id="option-a-card" onclick="selectRecoveryOption('A')"><div class="flex items-start gap-space-md"><div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-[24px]">explore</span></div><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between gap-space-xs"><h3 id="txt-option-a-title" class="font-headline-sm text-headline-sm text-primary font-bold truncate">Return to Central Lobby Stairs</h3><span id="txt-option-a-badge" class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase font-bold shrink-0">Recommended</span></div><p id="txt-option-a-desc" class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">Walk back down the stairs to the blue board and scan the QR code to re-orient.</p><div class="flex items-center gap-space-md mt-space-sm text-secondary font-label-sm text-label-sm"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">straighten</span><span id="txt-option-a-dist" class="">~35m walk</span></span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span><span id="txt-option-a-time" class="">Under 1 min</span></span></div></div><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 transition-opacity" id="check-icon-a"><span class="material-symbols-outlined text-[16px]">check</span></div></div></div><div class="recovery-option-card relative cursor-pointer w-full p-space-md rounded-xl bg-surface-container-lowest transition-all duration-200 active:scale-[0.99] shadow-sm select-none opacity-90" id="option-b-card" onclick="selectRecoveryOption('B')"><div class="flex items-start gap-space-md"><div class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[24px]">qr_code_scanner</span></div><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between gap-space-xs"><h3 id="txt-option-b-title" class="font-headline-sm text-headline-sm text-primary font-bold truncate">Scan Any Nearby QR Checkpoint</h3></div><p id="txt-option-b-desc" class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">If you see another MicroGuide QR plaque nearby in any hallway, scan it now to recalculate your route.</p><div class="flex items-center gap-space-md mt-space-sm text-secondary font-label-sm text-label-sm"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">door_front</span><span id="txt-option-b-loc" class="">Wall mounted at eye level</span></span></div></div><div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0 opacity-0 transition-opacity" id="check-icon-b"><span class="material-symbols-outlined text-[16px]">check</span></div></div></div></div>
+<!-- Grounding Encouragement Banner -->
+<div class="w-full bg-secondary-container/40 rounded-xl p-space-md flex items-center gap-space-sm mb-space-xl"><div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm"><span class="material-symbols-outlined text-[20px]">hearing</span></div><div class="flex flex-col min-w-0"><p id="txt-banner-title" class="font-label-md text-label-md text-on-secondary-fixed-variant font-semibold">Need assistance or a quiet moment?</p><p id="txt-banner-desc" class="font-body-sm text-body-sm text-on-secondary-container">The lobby concierge desk is directly next to the blue board if you prefer human help.</p></div></div>
+<!-- Bottom CTA Actions Deck -->
+<div class="flex flex-col gap-space-sm mt-auto pt-space-xs">
+<!-- Primary Flow Button -->
+<button class="w-full h-14 bg-primary text-on-primary font-label-lg text-label-lg rounded-full shadow-[0_4px_16px_rgba(8,21,52,0.2)] flex items-center justify-center gap-space-xs hover:bg-primary-container active:scale-[0.98] transition-all" id="primary-action-btn">
+<span id="primary-btn-label" class="">Guide Me Back to Last Checkpoint</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Safe Exit -->
+<button class="w-full h-11 flex items-center justify-center gap-space-xs text-secondary hover:text-primary active:scale-[0.98] transition-colors rounded-full font-label-md text-label-md" onclick="history.back()"><span class="material-symbols-outlined text-[18px]">undo</span><span id="txt-cancel-btn" class="">Cancel and return to route</span></button>
+</div><script>
+  let currentLang = 'EN';
+  let isDarkMode = false;
+
+  const translations = {
+    EN: {
+      wayfindingLabel: 'MicroGuide Wayfinding Assist',
+      mainTitle: 'Let’s find your last confirmed point.',
+      mainDesc: "Indoor spaces can be tricky. Don't worry—your last verified checkpoint is saved and ready.",
+      checkpointBadge: 'Last Verified Checkpoint',
+      timeAgo: '2 minutes ago',
+      nodeTitle: 'Node #1: Central Lobby Stairs',
+      nodeDesc: 'Blue digital information board',
+      nodeFloor: 'Floor 1 • Main Atrium North',
+      strategyTitle: 'Choose Recovery Strategy',
+      strategyStep: 'Step 1 of 2',
+      optATitle: 'Return to Central Lobby Stairs',
+      optABadge: 'Recommended',
+      optADesc: 'Walk back down the stairs to the blue board and scan the QR code to re-orient.',
+      optADist: '~35m walk',
+      optATime: 'Under 1 min',
+      optBTitle: 'Scan Any Nearby QR Checkpoint',
+      optBDesc: 'If you see another MicroGuide QR plaque nearby in any hallway, scan it now to recalculate your route.',
+      optBLoc: 'Wall mounted at eye level',
+      bannerTitle: 'Need assistance or a quiet moment?',
+      bannerDesc: 'The lobby concierge desk is directly next to the blue board if you prefer human help.',
+      primaryBtnA: 'Guide Me Back to Last Checkpoint',
+      primaryBtnB: 'Open Camera to Scan Plaque',
+      cancelBtn: 'Cancel and return to route',
+      langToggleLabel: 'ES'
+    },
+    ES: {
+      wayfindingLabel: 'Asistencia de Orientación MicroGuide',
+      mainTitle: 'Encontremos tu último punto confirmado.',
+      mainDesc: 'Los espacios interiores pueden desorientar. No te preocupes: tu último punto verificado está guardado.',
+      checkpointBadge: 'Último Punto de Control',
+      timeAgo: 'Hace 2 minutos',
+      nodeTitle: 'Nodo #1: Escaleras del Vestíbulo Central',
+      nodeDesc: 'Panel informativo digital azul',
+      nodeFloor: 'Piso 1 • Atrio Principal Norte',
+      strategyTitle: 'Elegir Estrategia de Recuperación',
+      strategyStep: 'Paso 1 de 2',
+      optATitle: 'Volver a las escaleras del vestíbulo central',
+      optABadge: 'Recomendado',
+      optADesc: 'Baja las escaleras hacia el panel azul y escanea el código QR para reorientarte.',
+      optADist: '~35m a pie',
+      optATime: 'Menos de 1 min',
+      optBTitle: 'Escanear Cualquier QR Cercano',
+      optBDesc: 'Si ves otra placa MicroGuide en cualquier pasillo, escanéala ahora para recalcular tu ruta.',
+      optBLoc: 'Montado en pared a la altura de los ojos',
+      bannerTitle: '¿Necesitas ayuda o un momento de pausa?',
+      bannerDesc: 'El mostrador de consejería está justo al lado del panel azul si prefieres atención humana.',
+      primaryBtnA: 'Guiarme al último punto de control',
+      primaryBtnB: 'Abrir Cámara para Escanear Placa',
+      cancelBtn: 'Cancelar y volver a la ruta',
+      langToggleLabel: 'EN'
+    }
+  };
+
+  function toggleLanguage() {
+    currentLang = currentLang === 'EN' ? 'ES' : 'EN';
+    applyLanguage(currentLang);
+  }
+
+  function applyLanguage(lang) {
+    const t = translations[lang];
+    const setIfExists = (id, text) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+
+    setIfExists('lang-label', t.langToggleLabel);
+    setIfExists('txt-wayfinding-label', t.wayfindingLabel);
+    setIfExists('txt-main-title', t.mainTitle);
+    setIfExists('txt-main-desc', t.mainDesc);
+    setIfExists('txt-checkpoint-badge', t.checkpointBadge);
+    setIfExists('txt-timeAgo', t.timeAgo);
+    setIfExists('txt-node-title', t.nodeTitle);
+    setIfExists('txt-node-desc', t.nodeDesc);
+    setIfExists('txt-node-floor', t.nodeFloor);
+    setIfExists('txt-strategy-title', t.strategyTitle);
+    setIfExists('txt-strategy-step', t.strategyStep);
+    setIfExists('txt-option-a-title', t.optATitle);
+    setIfExists('txt-option-a-badge', t.optABadge);
+    setIfExists('txt-option-a-desc', t.optADesc);
+    setIfExists('txt-option-a-dist', t.optADist);
+    setIfExists('txt-option-a-time', t.optATime);
+    setIfExists('txt-option-b-title', t.optBTitle);
+    setIfExists('txt-option-b-desc', t.optBDesc);
+    setIfExists('txt-option-b-loc', t.optBLoc);
+    setIfExists('txt-banner-title', t.bannerTitle);
+    setIfExists('txt-banner-desc', t.bannerDesc);
+    setIfExists('txt-cancel-btn', t.cancelBtn);
+
+    const btnLabel = document.getElementById('primary-btn-label');
+    if (btnLabel) {
+      btnLabel.textContent = selectedMode === 'A' ? t.primaryBtnA : t.primaryBtnB;
+    }
+  }
+
+  function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    const html = document.documentElement;
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (isDarkMode) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0b1329';
+      body.style.color = '#eaf1ff';
+      if (themeIcon) themeIcon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '';
+      body.style.color = '';
+      if (themeIcon) themeIcon.textContent = 'dark_mode';
+    }
+  }
+</script>
+</div>
+<script>
+  let selectedMode = 'A';
+
+  function selectRecoveryOption(mode) {
+    selectedMode = mode;
+    const cardA = document.getElementById('option-a-card');
+    const cardB = document.getElementById('option-b-card');
+    const checkA = document.getElementById('check-icon-a');
+    const checkB = document.getElementById('check-icon-b');
+    const btnLabel = document.getElementById('primary-btn-label');
+
+    if (mode === 'A') {
+      cardA.classList.remove('bg-surface-container-lowest', 'opacity-90');
+      cardA.classList.add('bg-surface-container-low', 'shadow-md');
+      checkA.classList.remove('opacity-0');
+      checkA.classList.add('opacity-100');
+
+      cardB.classList.remove('bg-surface-container-low', 'shadow-md');
+      cardB.classList.add('bg-surface-container-lowest', 'opacity-90');
+      checkB.classList.remove('opacity-100');
+      checkB.classList.add('opacity-0');
+
+      btnLabel.textContent = 'Guide Me Back to Last Checkpoint';
+    } else {
+      cardB.classList.remove('bg-surface-container-lowest', 'opacity-90');
+      cardB.classList.add('bg-surface-container-low', 'shadow-md');
+      checkB.classList.remove('opacity-0');
+      checkB.classList.add('opacity-100');
+
+      cardA.classList.remove('bg-surface-container-low', 'shadow-md');
+      cardA.classList.add('bg-surface-container-lowest', 'opacity-90');
+      checkA.classList.remove('opacity-100');
+      checkA.classList.add('opacity-0');
+
+      btnLabel.textContent = 'Open Camera to Scan Plaque';
+    }
+  }
+</script></main>
+
+</body></html>
