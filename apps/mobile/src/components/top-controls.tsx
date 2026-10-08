@@ -22,13 +22,13 @@ export function TopControls() {
   return (
     <View style={styles.row}>
       <View style={styles.langGroup}>
-        <Chip label="ES" icon="" active={lang === 'es'} onPress={() => { soundTap(); setLang('es'); }} />
-        <Chip label="EN" icon="" active={lang === 'en'} onPress={() => { soundTap(); setLang('en'); }} />
+        <Chip label="ES" active={lang === 'es'} onPress={() => { soundTap(); setLang('es'); }} />
+        <Chip label="EN" active={lang === 'en'} onPress={() => { soundTap(); setLang('en'); }} />
       </View>
       <View style={styles.rightGroup}>
         <Chip
           label={t('theme')}
-          icon={mode === 'dark' ? '🌙' : '☀️'}
+          icon={mode === 'dark' ? 'moon' : 'sunny'}
           onPress={() => {
             soundTap();
             setThemeOverride(themeOverride === 'dark' ? 'light' : 'dark');
@@ -36,7 +36,7 @@ export function TopControls() {
         />
         <Chip
           label={t('sound')}
-          icon={soundEnabled ? '🔊' : '🔇'}
+          icon={soundEnabled ? 'volume-high' : 'volume-mute'}
           active={soundEnabled}
           onPress={() => {
             toggleSound();
@@ -45,7 +45,7 @@ export function TopControls() {
         />
         <Chip
           label={t('voice')}
-          icon={voiceEnabled ? '🎙️' : '🎙'}
+          icon={voiceEnabled ? 'mic' : 'mic-off'}
           active={voiceEnabled}
           onPress={() => {
             soundTap();
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    gap: Spacing.sm,
+    gap: Spacing.lg,
     paddingHorizontal: Spacing.md,
     paddingTop: Spacing.sm,
     flexWrap: 'wrap',

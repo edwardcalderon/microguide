@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { ROUTE } from '@/constants/route';
@@ -71,9 +72,7 @@ export default function NavigatingScreen() {
       />
 
       <View style={[styles.stepCard, { backgroundColor: colors.surface, borderColor: colors.line }]}>
-        <Text style={styles.stepIcon} accessibilityElementsHidden>
-          {node.icon}
-        </Text>
+        <Icon name={node.icon} size={40} color={colors.accent} />
         <Text style={[styles.stepDirection, { color: colors.text }]}>{t(node.directionKey as any)}</Text>
 
         <View
@@ -89,14 +88,17 @@ export default function NavigatingScreen() {
           </Text>
         </View>
 
-        <Text style={[styles.walkMin, { color: colors.textTertiary }]}>
-          🕒 {node.walkMin} {t('walk_min')}
-        </Text>
+        <View style={styles.walkMinRow}>
+          <Icon name="time-outline" size={13} color={colors.textTertiary} />
+          <Text style={[styles.walkMin, { color: colors.textTertiary }]}>
+            {node.walkMin} {t('walk_min')}
+          </Text>
+        </View>
       </View>
 
       <View style={styles.actions}>
-        <Button label={t('action_scan')} icon="▭" onPress={() => router.push('/scan')} />
-        <Button label={t('action_reorient')} icon="⟳" variant="warn" onPress={handleReorient} />
+        <Button label={t('action_scan')} icon="qr-code-outline" onPress={() => router.push('/scan')} />
+        <Button label={t('action_reorient')} icon="compass-outline" variant="warn" onPress={handleReorient} />
       </View>
     </Screen>
   );
@@ -117,11 +119,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: Spacing.md,
   },
-  stepIcon: { fontSize: 40 },
   stepDirection: { fontSize: 17, fontWeight: '600', textAlign: 'center', lineHeight: 23 },
   landmarkBox: { width: '100%', borderWidth: 1.5, borderRadius: Radius.md, padding: Spacing.md, gap: 2 },
   landmarkLabel: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 0.3 },
   landmarkName: { fontSize: 15, fontWeight: '700' },
+  walkMinRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   walkMin: { fontSize: 12, fontWeight: '600' },
-  actions: { marginHorizontal: Spacing.md, marginTop: Spacing.xl, gap: Spacing.sm },
+  actions: { marginHorizontal: Spacing.md, marginTop: Spacing.xl, gap: Spacing.md },
 });

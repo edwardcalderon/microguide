@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text } from 'react-native';
 
+import { Icon, type IconName } from '@/components/ui/icon';
 import { Radius, Spacing } from '@/constants/theme';
 import { useThemeTokens } from '@/hooks/use-theme-tokens';
 
@@ -10,11 +11,12 @@ export function Chip({
   onPress,
 }: {
   label: string;
-  icon: string;
+  icon?: IconName;
   active?: boolean;
   onPress: () => void;
 }) {
   const { colors } = useThemeTokens();
+  const iconColor = active ? colors.accentInk : colors.textSecondary;
   return (
     <Pressable
       onPress={onPress}
@@ -31,10 +33,8 @@ export function Chip({
         },
       ]}
     >
-      <Text style={styles.icon} accessibilityElementsHidden>
-        {icon}
-      </Text>
-      <Text style={[styles.label, { color: active ? colors.accentInk : colors.textSecondary }]}>{label}</Text>
+      {icon ? <Icon name={icon} size={14} color={iconColor} /> : null}
+      <Text style={[styles.label, { color: iconColor }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -51,6 +51,5 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 14,
   },
-  icon: { fontSize: 13 },
   label: { fontSize: 12, fontWeight: '600' },
 });

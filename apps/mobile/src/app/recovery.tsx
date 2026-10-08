@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { ROUTE } from '@/constants/route';
@@ -44,7 +45,7 @@ export default function RecoveryScreen() {
   return (
     <Screen>
       <View style={styles.header}>
-        <Text style={styles.icon}>🧭</Text>
+        <Icon name="compass-outline" size={44} color={colors.accent} />
         <Text style={[styles.title, { color: colors.text }]} accessibilityRole="header">
           {t('recovery_title')}
         </Text>
@@ -70,8 +71,8 @@ export default function RecoveryScreen() {
       </View>
 
       <View style={styles.actions}>
-        <Button label={t('resume_btn')} icon="↩" onPress={handleResume} />
-        <Button label={t('return_btn')} icon="↺" variant="ghost" onPress={handleRestart} />
+        <Button label={t('resume_btn')} icon="play-outline" onPress={handleResume} />
+        <Button label={t('return_btn')} icon="refresh-outline" variant="ghost" onPress={handleRestart} />
       </View>
     </Screen>
   );
@@ -79,7 +80,6 @@ export default function RecoveryScreen() {
 
 const styles = StyleSheet.create({
   header: { alignItems: 'center', paddingTop: Spacing.lg, paddingHorizontal: Spacing.md, gap: 6 },
-  icon: { fontSize: 44 },
   title: { fontSize: 22, fontWeight: '800' },
   sub: { fontSize: 14, textAlign: 'center' },
   card: {
@@ -94,5 +94,5 @@ const styles = StyleSheet.create({
   lastNode: { borderWidth: 1.5, borderRadius: Radius.md, padding: Spacing.md, gap: 2 },
   lastNodeLabel: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', letterSpacing: 0.3 },
   lastNodeName: { fontSize: 15, fontWeight: '700' },
-  actions: { marginHorizontal: Spacing.md, marginTop: Spacing.xl, gap: Spacing.sm },
+  actions: { marginHorizontal: Spacing.md, marginTop: Spacing.xl, gap: Spacing.md },
 });

@@ -119,6 +119,7 @@ export const translations = {
     voice_heard: 'Se escuchó: "{text}"',
     voice_not_understood: 'No entendí: "{text}"',
     voice_listening_live: 'Escuchando… {text}',
+    voice_retry_other_lang: 'Probando en el otro idioma…',
   },
   en: {
     app_name: 'MicroGuide',
@@ -234,6 +235,7 @@ export const translations = {
     voice_heard: 'Heard: "{text}"',
     voice_not_understood: "Didn't catch that: \"{text}\"",
     voice_listening_live: 'Listening… {text}',
+    voice_retry_other_lang: 'Trying the other language…',
   },
 } as const;
 

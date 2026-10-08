@@ -3,7 +3,9 @@ import { useCallback } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
+import { Icon } from '@/components/ui/icon';
 import { TopControls } from '@/components/top-controls';
+import { VersionFooter } from '@/components/version-footer';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { DESTINATIONS, ROUTE, TOTAL_ROUTE_MIN, type DestinationId } from '@/constants/route';
@@ -66,9 +68,7 @@ export default function WelcomeScreen() {
               { backgroundColor: colors.surface, borderColor: colors.line, opacity: pressed ? 0.8 : 1 },
             ]}
           >
-            <Text style={styles.cardIcon} accessibilityElementsHidden>
-              {dest.icon}
-            </Text>
+            <Icon name={dest.icon} size={28} color={colors.accent} />
             <View style={styles.cardText} accessibilityElementsHidden>
               <Text style={[styles.cardTitle, { color: colors.text }]}>{t(`dest_${dest.id}` as const)}</Text>
               <Text style={[styles.cardMeta, { color: colors.textSecondary }]}>
@@ -78,12 +78,12 @@ export default function WelcomeScreen() {
                 {ROUTE.totalNodes} {t('nodes_min')} · {TOTAL_ROUTE_MIN} {t('time_min')}
               </Text>
             </View>
-            <Text style={[styles.chevron, { color: colors.accent }]} accessibilityElementsHidden>
-              →
-            </Text>
+            <Icon name="chevron-forward" size={18} color={colors.accent} />
           </Pressable>
         ))}
       </View>
+
+      <VersionFooter />
     </Screen>
   );
 }
@@ -111,10 +111,8 @@ const styles = StyleSheet.create({
     borderRadius: Radius.lg,
     padding: Spacing.md,
   },
-  cardIcon: { fontSize: 28 },
   cardText: { flex: 1, gap: 2 },
   cardTitle: { fontSize: 16, fontWeight: '700' },
   cardMeta: { fontSize: 12 },
   cardStats: { fontSize: 11, marginTop: 2 },
-  chevron: { fontSize: 18, fontWeight: '700' },
 });

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Spacing } from '@/constants/theme';
@@ -45,7 +46,7 @@ export default function ConfirmedScreen() {
   return (
     <Screen>
       <View style={styles.center}>
-        <Text style={[styles.tick, { color: colors.success }]}>✓</Text>
+        <Icon name="checkmark-circle" size={56} color={colors.success} />
         <Text style={[styles.title, { color: colors.text }]} accessibilityRole="header">
           {t('confirmed_title')}
         </Text>
@@ -69,7 +70,7 @@ export default function ConfirmedScreen() {
       <View style={styles.actions}>
         <Button
           label={isLastNode ? t('action_arrived') : t('continue_btn')}
-          icon="→"
+          icon="arrow-forward"
           onPress={handleContinue}
         />
       </View>
@@ -79,7 +80,6 @@ export default function ConfirmedScreen() {
 
 const styles = StyleSheet.create({
   center: { alignItems: 'center', paddingTop: Spacing.xxl, gap: Spacing.sm, paddingHorizontal: Spacing.md },
-  tick: { fontSize: 56, fontWeight: '800' },
   title: { fontSize: 22, fontWeight: '800' },
   sub: { fontSize: 14, textAlign: 'center' },
   ringWrap: { marginTop: Spacing.lg },

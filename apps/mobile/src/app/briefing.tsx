@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Screen } from '@/components/screen';
 import { ScreenHeader } from '@/components/screen-header';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { ROUTE, TOTAL_ROUTE_MIN } from '@/constants/route';
@@ -60,7 +61,7 @@ export default function BriefingScreen() {
         ))}
         <View style={styles.stepRow}>
           <View style={[styles.stepDot, { backgroundColor: colors.success }]}>
-            <Text style={styles.stepDotText}>🏁</Text>
+            <Icon name="flag" size={13} color="#fff" />
           </View>
           <Text style={[styles.stepText, { color: colors.text }]}>{t('route_node_end')}</Text>
         </View>
@@ -73,7 +74,7 @@ export default function BriefingScreen() {
       </View>
 
       <View style={styles.actions}>
-        <Button label={t('start_btn')} icon="▶" onPress={handleStart} />
+        <Button label={t('start_btn')} icon="play" onPress={handleStart} />
       </View>
     </Screen>
   );

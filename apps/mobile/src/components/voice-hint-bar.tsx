@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { AccessibilityInfo, Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { Icon } from '@/components/ui/icon';
+import { MicWave } from '@/components/ui/mic-wave';
 import { Radius, Spacing } from '@/constants/theme';
 import { useI18n } from '@/hooks/use-i18n';
 import { useThemeTokens } from '@/hooks/use-theme-tokens';
@@ -54,10 +56,14 @@ export function VoiceHintBar({
       style={[styles.bar, { backgroundColor: colors.surfaceAlt, borderColor: colors.line }]}
       accessibilityLiveRegion="polite"
     >
-      <View
-        style={[styles.dot, { backgroundColor: speaking || listening ? colors.accent : colors.textTertiary }]}
-        accessibilityElementsHidden
-      />
+      {listening ? (
+        <MicWave color={colors.accent} size={14} />
+      ) : (
+        <View
+          style={[styles.dot, { backgroundColor: speaking ? colors.accent : colors.textTertiary }]}
+          accessibilityElementsHidden
+        />
+      )}
       <View style={styles.textCol}>
         <Text style={[styles.text, { color: colors.textSecondary }]} numberOfLines={2}>
           {statusText}
@@ -90,9 +96,7 @@ export function VoiceHintBar({
             },
           ]}
         >
-          <Text style={{ fontSize: 15 }} accessibilityElementsHidden>
-            {listening ? '●' : '🎙️'}
-          </Text>
+          <Icon name={listening ? 'stop-circle' : 'mic-outline'} size={16} color={listening ? colors.accentInk : colors.text} />
         </Pressable>
       ) : null}
     </View>
@@ -103,22 +107,23 @@ const styles = StyleSheet.create({
   bar: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: Spacing.sm,
+    gap: Spacing.md,
     marginHorizontal: Spacing.md,
-    marginBottom: Spacing.sm,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
+    marginTop: Spacing.md,
+    marginBottom: Spacing.md,
+    paddingVertical: 12,
+    paddingHorizontal: Spacing.md,
     borderWidth: 1,
     borderRadius: Radius.md,
   },
   dot: { width: 7, height: 7, borderRadius: 4, marginTop: 5 },
-  textCol: { flex: 1, gap: 2 },
-  text: { fontSize: 11, fontWeight: '500' },
+  textCol: { flex: 1, gap: 4 },
+  text: { fontSize: 11, fontWeight: '500', lineHeight: 15 },
   caption: { fontSize: 12, fontWeight: '700' },
   micBtn: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',

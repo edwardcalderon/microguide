@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, type PressableProps } from 'react-native';
 
+import { Icon, type IconName } from '@/components/ui/icon';
 import { Radius, Spacing } from '@/constants/theme';
 import { useThemeTokens } from '@/hooks/use-theme-tokens';
 
@@ -8,7 +9,7 @@ type Variant = 'primary' | 'ghost' | 'warn';
 type Props = PressableProps & {
   label: string;
   variant?: Variant;
-  icon?: string;
+  icon?: IconName;
 };
 
 export function Button({ label, variant = 'primary', icon, style, ...rest }: Props) {
@@ -29,11 +30,7 @@ export function Button({ label, variant = 'primary', icon, style, ...rest }: Pro
       ]}
       {...rest}
     >
-      {icon ? (
-        <Text style={[styles.icon, { color: textColor }]} accessibilityElementsHidden>
-          {icon}
-        </Text>
-      ) : null}
+      {icon ? <Icon name={icon} size={18} color={textColor} /> : null}
       <Text style={[styles.label, { color: textColor }]} accessibilityElementsHidden>
         {label}
       </Text>
@@ -49,10 +46,9 @@ const styles = StyleSheet.create({
     gap: Spacing.sm,
     borderWidth: 1.5,
     borderRadius: Radius.pill,
-    paddingVertical: 14,
+    paddingVertical: 16,
     paddingHorizontal: Spacing.lg,
-    minHeight: 50,
+    minHeight: 54,
   },
   label: { fontSize: 15, fontWeight: '700' },
-  icon: { fontSize: 16 },
 });

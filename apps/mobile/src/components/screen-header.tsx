@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { Icon } from '@/components/ui/icon';
 import { Spacing } from '@/constants/theme';
 import { useI18n } from '@/hooks/use-i18n';
 import { useThemeTokens } from '@/hooks/use-theme-tokens';
@@ -37,9 +38,7 @@ export function ScreenHeader({
           }}
           style={[styles.backBtn, { borderColor: colors.line, backgroundColor: colors.surface }]}
         >
-          <Text style={{ color: colors.text, fontSize: 18 }} accessibilityElementsHidden>
-            ←
-          </Text>
+          <Icon name="arrow-back" size={18} color={colors.text} />
         </Pressable>
       ) : null}
       <View style={styles.textBlock}>

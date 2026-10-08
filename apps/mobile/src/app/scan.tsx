@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { useAnnounce } from '@/hooks/use-announce';
@@ -34,7 +35,7 @@ export default function ScanScreen() {
     setTimeout(() => {
       soundConfirm();
       confirmCurrentNode();
-      showToast(t('toast_scan_ok'));
+      showToast(t('toast_scan_ok'), 'success');
       setScanning(false);
       router.push('/confirmed');
     }, 650);
@@ -53,7 +54,7 @@ export default function ScanScreen() {
 
       <View style={styles.stage}>
         <View style={[styles.frame, { borderColor: colors.accent }]}>
-          <Text style={styles.qr}>▦</Text>
+          <Icon name="qr-code-outline" size={120} color={colors.textTertiary} style={styles.qr} />
           {scanning ? (
             <View style={[styles.scanLine, { backgroundColor: colors.accent }]} />
           ) : null}
@@ -64,7 +65,7 @@ export default function ScanScreen() {
       <View style={styles.actions}>
         <Button
           label={scanning ? t('voice_status_speaking') : t('scan_confirm_btn')}
-          icon="▭"
+          icon="qr-code-outline"
           onPress={handleScan}
           disabled={scanning}
         />
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
   },
-  qr: { fontSize: 96, opacity: 0.5 },
+  qr: { opacity: 0.5 },
   scanLine: { position: 'absolute', left: 8, right: 8, height: 3, top: '50%', opacity: 0.8 },
   hint: { fontSize: 12, fontWeight: '600' },
   actions: { marginHorizontal: Spacing.md, marginBottom: Spacing.xl },

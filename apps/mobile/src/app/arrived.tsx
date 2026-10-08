@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/components/screen';
 import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/ui/icon';
 import { VoiceHintBar } from '@/components/voice-hint-bar';
 import { Radius, Spacing } from '@/constants/theme';
 import { ROUTE } from '@/constants/route';
@@ -43,7 +44,7 @@ export default function ArrivedScreen() {
   return (
     <Screen>
       <View style={[styles.banner, { backgroundColor: colors.success }]}>
-        <Text style={styles.bannerIcon}>🎉</Text>
+        <Icon name="trophy" size={40} color="#fff" />
         <Text style={styles.bannerTitle} accessibilityRole="header">
           {t('arrived_title')}
         </Text>
@@ -61,7 +62,7 @@ export default function ArrivedScreen() {
       </View>
 
       <View style={styles.actions}>
-        <Button label={t('arrived_action')} icon="🏠" onPress={handleFinish} />
+        <Button label={t('arrived_action')} icon="home" onPress={handleFinish} />
       </View>
     </Screen>
   );
@@ -92,7 +93,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 4,
   },
-  bannerIcon: { fontSize: 40 },
   bannerTitle: { fontSize: 20, fontWeight: '800', color: '#fff' },
   bannerSub: { fontSize: 13, color: '#fff', opacity: 0.9, textAlign: 'center' },
   summaryLabel: {
