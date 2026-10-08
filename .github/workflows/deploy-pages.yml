@@ -1,0 +1,67 @@
+name: Deploy web to GitHub Pages
+
+# Publishes the Expo Router static web export to GitHub Pages at
+# https://edwardcalderon.github.io/microguide/. The subpath is baked into
+# the build via `expo.experiments.baseUrl` in apps/mobile/app.json — see
+# https://docs.expo.dev/guides/publishing-websites/.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/mobile/**"
+      - "turbo.json"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+# Only one deploy at a time; a new push supersedes whatever's still running.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build static export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Export web build
+        run: pnpm exec turbo run export:web --filter=@microguide/mobile
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/mobile/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -50,6 +50,7 @@
     "lint": "expo lint",
     "type-check": "tsc --noEmit",
     "build": "expo export",
+    "export:web": "expo export --platform web",
     "clean": "rm -rf .expo dist node_modules"
   },
   "private": true
